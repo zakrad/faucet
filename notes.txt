@@ -1,0 +1,32 @@
+60 80 60 40 52 34 80 15 60 0f 57 60 00 80 fd 5b 50 60 45 80 60 1d 60 00 39 60 00 f3 fe
+0  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28
+//stack 
+
+
+push 0x00
+push 0x45
+
+and it get cleans
+0xfe will be invalid
+
+--------------
+0x39 codecopy 
+
+
+0x50 remove item from stack so stack empty
+
+0x57 jump to stack zero if stack 1 is 1 which is jumps to decimal of 0f which is 15 and is 0x5b and remove 2 first one
+
+
+0x01 call value (0x34)
+0x00 call value (0x34) duplicated cuz of 0x80 and (0x15) check zero and push one
+
+//memory 
+
+Memory[0x40] = 0x80 //free memory pointer
+
+Memory[0x00] = code to copy
+
+push 0x00
+push 0x1d --> 29 byte copy after it to deploy
+push 0x45 --> 69 byte copy to deploy 
